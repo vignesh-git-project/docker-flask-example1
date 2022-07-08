@@ -14,14 +14,6 @@ strategy:
       python.version: '3.7'
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
-
-- script: |
-    pip install -r ./files/requirements.txt
-  displayName: 'Build'
 
 - task: Docker@2
   inputs:

@@ -20,14 +20,9 @@ steps:
   displayName: 'Use Python $(python.version)'
 
 - script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName: 'Install dependencies'
+    pip install -r ./files/requirements.txt
+  displayName: 'Build'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
 - task: Docker@2
   inputs:
     command: 'buildAndPush'
